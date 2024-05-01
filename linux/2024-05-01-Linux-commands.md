@@ -54,3 +54,18 @@
 
 Next up will be types of shells
 
+<h2>Types of shell</h2>
+
+* Bourne Shell (sh) 
+* C Shell (csh or tcsh) 
+* Korn Shell (ksh) 
+* Z Shell (zsh) 
+* Bourne again Shell (ba    sh).
+
+* to know the type of shell you are working on, use `echo $SHELL`
+
+* Use aliases to shorten commands: That's assigning a variable to a command. Example `ga=git add`, instead of typing `git add`, users can easily type `ga`. To set an alias called `up` for the command `uptime` and make it persistent to `~/.profile`. Use the command `alias up=uptime` and `'echo alias up=uptime'` `>> ~Ifeanyi/.profile`
+
+<h3>Path variable</h3>
+* The command `echo $PATH` prints your path
+* To use the which command, you have to first export the path:`export PATH=$PATH:/opt/obs/bin` and then use the which command; example: `which obs-studio'
