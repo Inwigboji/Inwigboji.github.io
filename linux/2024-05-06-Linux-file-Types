@@ -1,0 +1,70 @@
+
+  <h2>Linux file types</h2>
+
+  * There are three types of files in linux including regular, directory, and special files.
+
+  * Regular file examples include: Images, Scripts, Configurations/Data files
+
+  * Simple examples of directory include: /home/bob, /root, and /home/bob/code-directory
+
+  * Examples of Special files include Block files, Character files, Links,Socket files, and named pipes  . Links also have hard and soft links.
+
+ 
+  <h3>working with RPM</h3> 
+
+  * The commands for installing, uninstalling, upgrading, querying, and verifying packages using RPM in   clude for instance, installing telnet.rpm.
+
+  * Installing: `rpm -ivh telnet.rpm`
+  *Uninstalling: `rpm -e telnet.rpm`
+  *Upgrading: `rpm -Uvh telnet.rpm`
+  * Query: `rpm -q telnet.rpm`
+  *Verifying: `rpm -Vf <path to file>`
+
+  * To install a package using yum, for example httpd, use `yum install httpd -y`. Other yum commands i    nclude, checking the list of repos; `yum repolist`. 
+  * If you want to check to know which specific package will be installed for the command to work use
+    `yum provides` with the command name as the arguement. Example: `yum provides scp. Also use the yum     remove command to remove a package.
+   * `yum remove httpd` - to remove httpd package
+   * `yum update httpd` - to update httpd package
+ 
+ <h2>File Compression and Archival</h2> 
+
+ <h3>Archiving files</h3>
+
+ * `tar -cf` 
+  * Example: `tar -cf test.tar file1 file2 file3`
+  * `ls -ltr test.tar`
+ * To see the content of the tar file, use `tar -tf` and the file name. Example:    `tar -tf test.tar`
+ * Also, to extract the content from the tar ball, use `tar -xf test.tar`
+ * Finally, we use the `xcf` command to compress the file and reduce its size
+   * Example: `tar -zcf test.tar file1 file2 file3`
+
+ * Three important commands using in compressing files
+   1. `bzip2`, `bip2 test.img`, `du -sh test,img.bz2`
+   2. `gzip`, `gzip test1.img`, `du -sh test1.img.gz`
+   3. `xz`, `xz test2.img`, `du -sh test2.img.xz'
+
+ * There are three ways to uncompress a file:
+   1. `bunzip2`; `bunzip2 test.img.bz2`, `du -sh test.img`
+   2. `gunzip`; `gunzip test1.img.gz`, ` du -sh test1.img`
+   3. `unxz`; `unxz test2.img.xz`, `du -sh test2.img`
+
+
+  <h3>Locating files and directories</h3>
+  * To locate a file or directory, use the locate command, example:`locate city.   txt`.
+  * You can also use the `find command` along with file path to locate a file.
+   Example; `find /home/Ifeanyi -name city.txt`
+
+  * TO search for a particular word in a file, use `grep`
+    Example; To search for the word second in file sample.txt; `grep second samp    le.txt`. grep is case sensitive, to grab all occurences either upper or lowe    r cases, use: `grep -i capital sample.txt`. While `grep -r prints it recursi    vely. `grep -r "third line" /home/Ifeanyi`.
+    * To print the lines that doesn't have the match, use the `-v` option with t     he grep.
+    * To grep just all the occurences of a particular word in full use the `-w`
+    * To do the opposite use the `-vw` option.
+    * Similarly, to print the word that folows next word in a file premier-leagu      e-table.txt
+     Example: 1. Arsenal
+              2. Liverpool
+	      3. Manchester United
+	      4. Chelsea
+     To print Liverpool, use `grep -A1 Arsebal premier-league-table.txt`
+
+     * We can also combine the `A and B` to print the line before and after the      match. So, use `grep -A1 -B1 Chelsea premier-league-table.txt` to print Liv     erpool and Machester United.
+         
